@@ -17,8 +17,8 @@ df_Param = df[['Depth','Width']]
 df_data = df.drop(['Depth','Width'], axis=1)
 #Делим данные на тренировочные и тестируемые
 Xtrn, Xtest, Ytrn, Ytest = train_test_split(df_data, df_Param, test_size=0.4)
-#Применяем метод линейной регрессии
-regr=LogisticRegression().fit(Xtrn,Ytrn)
+#Применяем метод Логистической регрессии
+regr=LogisticRegression(solver='saga', C=(10 ** (-3)), fit_intercept=False, n_jobs=40).fit(Xtrn,Ytrn)
 y_pred = regr.predict(Xtest)
 #Оценка модели
 print("Оценка модели", regr.score(Xtest,Ytest))
