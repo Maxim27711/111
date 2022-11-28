@@ -1,6 +1,7 @@
 import pandas as pd
 from pandas import read_csv, DataFrame
-from sklearn.linear_model import Linear_regression
+import sklearn
+from sklearn.linear_model import Logistic_regression
 from sklearn.svm import SVR
 from sklearn.metrics import r2_score
 from sklearn.cross_validation import train_test_split

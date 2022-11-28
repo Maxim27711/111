@@ -1,9 +1,9 @@
 import pandas as pd
 from pandas import read_csv, DataFrame
-from sklearn.linear_model import Linear_regression
+from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVR
 from sklearn.metrics import r2_score
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 #Первичная Обработка Dataframe:
 
 #считываем файл в DataFrame
