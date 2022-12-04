@@ -37,8 +37,10 @@ Xtest -= mean
 Xtest /= std
 Xtrn=Xtrn.astype('int64')
 Xtest=Xtest.astype('int64')
-model = LogisticRegression(penalty='l2', tol=0.01).fit(Xtrn,Ytrn)
-scores = cross_val_score(model, df_data, df_Param, cv = kfold)
+Xtrn=Xtrn.reshape(-1,1)
+Xtest=Xtest.reshape(-1,1)
+model = LogisticRegression(penalty='l2', tol=0.01)
+scores = cross_val_score(model, df_data, df_Param, cv = kfold,error_score='raise')
 itog_val['LogisticRegression'] = scores.mean()
 
 print(itog_val)
