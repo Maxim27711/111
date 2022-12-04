@@ -1,10 +1,7 @@
 import pandas as pd
-from pandas import read_csv, DataFrame
-import sklearn
-from sklearn.linear_model import Logistic_regression
-from sklearn.svm import SVR
-from sklearn.metrics import r2_score
-from sklearn.cross_validation import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
 #Первичная Обработка Dataframe:
 
 #считываем файл в DataFrame
@@ -19,7 +16,7 @@ df_data = df.drop(['Depth','Width'], axis=1)
 #Делим данные на тренировочные и тестируемые
 Xtrn, Xtest, Ytrn, Ytest = train_test_split(df_data, df_Param, test_size=0.4)
 #Применяем метод линейной регрессии
-regr=LogisticRegression().fit(Xtrn,Ytrn)
+regr=LinearRegression().fit(Xtrn,Ytrn)
 y_pred = regr.predict(Xtest)
 #Оценка модели
 print("Оценка модели", regr.score(Xtest,Ytest))

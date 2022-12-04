@@ -24,8 +24,8 @@ df_data = df.drop(['Depth','Width'], axis=1)
 #Делим данные на тренировочные и тестируемые
 Xtrn, Xtest, Ytrn, Ytest = train_test_split(df_data, df_Param, test_size=0.4)
 #Применяем метод линейной регрессии
-regr=LinearRegression().fit(Xtrn,Ytrn)
-y_pred = regr.predict(Xtest)
+#regr=LinearRegression().fit(Xtrn,Ytrn)
+#y_pred = regr.predict(Xtest)
 #Оценка модели
 #print("Оценка модели", regr.score(Xtest,Ytest))
 #Вводим дополнительные значения на тест:
